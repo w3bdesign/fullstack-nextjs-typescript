@@ -10,3 +10,5 @@ I am also adding Typescript as it was not in the tutorial.
 - React-bootstrap
 - Typescript
 - Apollo client with GraphQL
+
+More to come ...
