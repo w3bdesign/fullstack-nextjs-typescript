@@ -11,4 +11,9 @@ I am also adding Typescript as it was not in the tutorial.
 - Typescript
 - Apollo client with GraphQL
 
+## Future features
+
+- MongoDB
+- Authentication
+
 More to come ...
