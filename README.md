@@ -10,6 +10,7 @@ I am also adding Typescript as it was not in the tutorial.
 - Strapi
 - React-bootstrap
 - Typescript
+- Eslint with Airbnb
 - Apollo client with GraphQL
 
 ## Future features
