@@ -6,6 +6,13 @@ import Row from 'react-bootstrap/Row';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 
+type TRestaurant = {
+  id: number;
+  name: string;
+  description: string;
+  image: { url: string };
+};
+
 const FETCH_RESTAURANTS = gql`
   query GetRestaurants {
     restaurants {
@@ -37,20 +44,22 @@ const Index = () => {
     );
   }
 
-  return data.restaurants.map(({
-    id, name, description, image,
-  }) => (
-    <Row key={id}>
-      <Card style={{ width: '18rem' }}>
-        <Card.Img variant="top" src={`http://localhost:1338${image.url}`} />
-        <Card.Body>
-          <Card.Title>{name}</Card.Title>
-          <Card.Text>{description}</Card.Text>
-          <Button variant="primary">Text</Button>
-        </Card.Body>
-      </Card>
-    </Row>
-  ));
+  return data.restaurants.map(
+    ({
+      id, name, description, image,
+    }: TRestaurant) => (
+      <Row key={id}>
+        <Card style={{ width: '18rem' }}>
+          <Card.Img variant="top" src={`http://localhost:1338${image.url}`} />
+          <Card.Body>
+            <Card.Title>{name}</Card.Title>
+            <Card.Text>{description}</Card.Text>
+            <Button variant="primary">Text</Button>
+          </Card.Body>
+        </Card>
+      </Row>
+    ),
+  );
 };
 
 export default Index;

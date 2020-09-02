@@ -2,7 +2,8 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "eslint": "eslint --fix src/**/*"
   },
   "dependencies": {
     "@apollo/client": "^3.1.4",
