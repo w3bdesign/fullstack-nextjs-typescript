@@ -1,5 +1,6 @@
 // https://nextjs.org/docs/basic-features/typescript
 
+import React from 'react';
 import { useQuery, gql } from '@apollo/client';
 import Row from 'react-bootstrap/Row';
 import Card from 'react-bootstrap/Card';
@@ -21,20 +22,24 @@ const FETCH_RESTAURANTS = gql`
 const Index = () => {
   const { loading, error, data } = useQuery(FETCH_RESTAURANTS);
 
-  if (loading)
+  if (loading) {
     return (
       <div>
         <p>Loading...</p>
       </div>
     );
-  if (error)
+  }
+  if (error) {
     return (
       <div>
         <p>Error!</p>
       </div>
     );
+  }
 
-  return data.restaurants.map(({ id, name, description, image }) => (
+  return data.restaurants.map(({
+    id, name, description, image,
+  }) => (
     <Row key={id}>
       <Card style={{ width: '18rem' }}>
         <Card.Img variant="top" src={`http://localhost:1338${image.url}`} />
