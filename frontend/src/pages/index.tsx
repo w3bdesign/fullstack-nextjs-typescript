@@ -21,11 +21,18 @@ const FETCH_RESTAURANTS = gql`
 const Index = () => {
   const { loading, error, data } = useQuery(FETCH_RESTAURANTS);
 
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error :(</p>;
-  console.log(data);
-
-  //return <h1>Graphql see console.log</h1>;
+  if (loading)
+    return (
+      <div>
+        <p>Loading...</p>
+      </div>
+    );
+  if (error)
+    return (
+      <div>
+        <p>Error!</p>
+      </div>
+    );
 
   return data.restaurants.map(({ id, name, description, image }) => (
     <Row key={id}>
