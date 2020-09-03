@@ -1,7 +1,7 @@
 import { gql } from '@apollo/client';
 
 const LIST_RESTAURANTS = gql`
-query GetRestaurants {
+query GetMyRestaurants {
   restaurants {
     id
     name
