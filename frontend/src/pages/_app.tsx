@@ -7,6 +7,8 @@ import { ApolloProvider } from '@apollo/client';
 
 import client from '../lib/Apollo';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 const App = ({ Component }: AppProps) => (
   <div>
     <Head>Test</Head>
