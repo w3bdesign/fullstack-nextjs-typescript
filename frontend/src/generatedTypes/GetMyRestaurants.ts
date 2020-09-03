@@ -16,7 +16,7 @@ export interface GetMyRestaurants_restaurants {
   __typename: "Restaurant";
   id: string;
   name: string;
-  description: string | null;
+  description: string;
   image: GetMyRestaurants_restaurants_image | null;
 }
 
