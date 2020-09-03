@@ -1,12 +1,20 @@
 // https://nextjs.org/docs/basic-features/typescript
 
-import React from 'react';
+// https://strapi.io/blog/nextjs-react-hooks-strapi-restaurants-2
+
+import React, { useState } from 'react';
 
 import RestaurantList from '../components/RestaurantList/index';
+import SearchInput from '../components/SearchInput/index';
 
-const Index = () => (
-  // const [query, updateQuery] = useState('');
+const Index = () => {
+  const [query, updateQuery] = useState('');
 
-  <RestaurantList />
-);
+  return (
+    <>
+      <SearchInput query={query} updateQuery={updateQuery} />
+      <RestaurantList />
+    </>
+  );
+};
 export default Index;
