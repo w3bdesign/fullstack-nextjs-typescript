@@ -5,6 +5,7 @@ import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
+import Col from 'react-bootstrap/Col';
 
 import LIST_RESTAURANTS from '../../gql/LIST_RESTAURANTS';
 
@@ -36,17 +37,23 @@ const RestaurantList = () => {
 
   return (
     <>
-      <Form>
-        <Form.Group controlId="formBasicInput">
-          <Form.Label>Search restaurants</Form.Label>
-          <Form.Control type="text" placeholder="Enter restaurant name" style={{ width: '20rem', margin: '2rem' }} className="justify-content-md-center" />
-        </Form.Group>
-      </Form>
+      <Container>
+        <Row className="justify-content-md-center" style={{ marginTop: '1rem' }}>
 
-      {data.restaurants.map(({
-        id, name, description, image,
-      }: TRestaurant) => (
-        <Container>
+          <Form>
+            <Form.Group controlId="formBasicInput">
+              <Form.Label>Search restaurants</Form.Label>
+              <Form.Control type="text" placeholder="Enter restaurant name" style={{ width: '18rem', marginTop: '1rem' }} />
+              <Button variant="primary" style={{ marginTop: '1rem' }}>Search</Button>
+            </Form.Group>
+          </Form>
+
+        </Row>
+
+        {data.restaurants.map(({
+          id, name, description, image,
+        }: TRestaurant) => (
+
           <Row key={id} className="justify-content-md-center">
             <Card style={{ width: '18rem', margin: '2rem' }}>
               <Card.Img
@@ -60,8 +67,9 @@ const RestaurantList = () => {
               </Card.Body>
             </Card>
           </Row>
-        </Container>
-      ))}
+
+        ))}
+      </Container>
     </>
   );
 };
