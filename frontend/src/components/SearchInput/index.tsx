@@ -7,13 +7,13 @@ import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 
 type TSearchInputProps = {
-   query: string;
+
    updateQuery: Dispatch<SetStateAction<string>>;
 
 }
 
 const SearchInput = ({
-  query,
+
   updateQuery,
 
 }: TSearchInputProps) => (

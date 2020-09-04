@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useQuery } from '@apollo/client';
 
 import Row from 'react-bootstrap/Row';
@@ -15,13 +15,6 @@ type TRestaurantListProps = {
 
 const RestaurantList = ({ query }: TRestaurantListProps) => {
   const { loading, error, data } = useQuery<GetMyRestaurants>(LIST_RESTAURANTS);
-
-  useEffect(() => {
-    if (data) {
-      const searchQuery = data!.restaurants!.filter((test) => test!.name.toLowerCase().includes(query));
-    }
-    // test.toLowerCase().includes(query));
-  }, [query]);
 
   if (loading || !data) {
     return (

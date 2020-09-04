@@ -11,11 +11,7 @@ const Index = () => {
 
   return (
     <>
-      <SearchInput
-        query={query}
-        updateQuery={updateQuery}
-
-      />
+      <SearchInput updateQuery={updateQuery} />
       <RestaurantList query={query} />
     </>
   );
