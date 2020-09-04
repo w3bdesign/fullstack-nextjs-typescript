@@ -8,10 +8,15 @@ import SearchInput from '../components/SearchInput/index';
 
 const Index = () => {
   const [query, updateQuery] = useState<string>('');
+
   return (
     <>
-      <SearchInput query={query} updateQuery={updateQuery} />
-      <RestaurantList />
+      <SearchInput
+        query={query}
+        updateQuery={updateQuery}
+
+      />
+      <RestaurantList query={query} />
     </>
   );
 };
