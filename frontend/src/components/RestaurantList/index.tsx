@@ -38,8 +38,8 @@ const RestaurantList = ({ query }: TRestaurantListProps) => {
   return (
     <>
       <Container>
-        {data.restaurants
-          && restaurantsToShow.map((restaurant) => (
+        {restaurantsToShow.length
+          ? restaurantsToShow.map((restaurant) => (
             <Row
               key={restaurant!.id}
               className="text-center justify-content-md-center"
@@ -60,7 +60,8 @@ const RestaurantList = ({ query }: TRestaurantListProps) => {
                 </Card.Body>
               </Card>
             </Row>
-          ))}
+          ))
+          : (<h3 className="text-center">No restaurants to display</h3>)}
       </Container>
     </>
   );
