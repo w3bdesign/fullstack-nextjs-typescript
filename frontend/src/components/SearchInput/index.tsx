@@ -6,13 +6,15 @@ import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 
+type TSearchInputProps = {
+  query: string;
+  updateQuery: Dispatch<SetStateAction<string>>;
+}
+
 const SearchInput = ({
   query,
   updateQuery,
-}: {
-  query: string;
-  updateQuery: Dispatch<SetStateAction<string>>;
-}) => (
+}: TSearchInputProps) => (
   <Container>
     <Row className="justify-content-md-center" style={{ marginTop: '1rem' }}>
       <Form>
