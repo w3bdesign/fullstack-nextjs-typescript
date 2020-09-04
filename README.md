@@ -12,6 +12,7 @@ I am also adding Typescript as it was not in the tutorial.
 - Typescript
 - Eslint with Airbnb
 - Apollo client with GraphQL
+- Automatically generate types with Apollo CLI
 
 ## Future features
 
