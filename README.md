@@ -11,5 +11,6 @@ I am also adding Typescript as it was not in the tutorial.
 - React-bootstrap
 - Typescript
 - Apollo client with GraphQL
+- Automatically generate types with Apollo CLI
 
 More to come ...
