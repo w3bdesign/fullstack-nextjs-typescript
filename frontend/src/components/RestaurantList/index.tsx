@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useQuery } from '@apollo/client';
+
 import Row from 'react-bootstrap/Row';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
@@ -16,8 +17,12 @@ const RestaurantList = ({ query }: TRestaurantListProps) => {
   const { loading, error, data } = useQuery<GetMyRestaurants>(LIST_RESTAURANTS);
 
   useEffect(() => {
-    console.log(`Query is ...${query}`);
-    // const searchQuery = data.restaurants.filter((query) => query.toLowerCase().includes(query));
+    if (data) {
+      const searchQuery = data!.restaurants!.filter((test) =>
+        console.log(test.name.toLowerCase().includes(query))
+      );
+    }
+    // test.toLowerCase().includes(query));
   }, [query]);
 
   if (loading || !data) {
@@ -39,8 +44,8 @@ const RestaurantList = ({ query }: TRestaurantListProps) => {
   return (
     <>
       <Container>
-        {data.restaurants
-          && data.restaurants.map((restaurant) => (
+        {data.restaurants &&
+          data.restaurants.map((restaurant) => (
             <Row
               key={restaurant!.id}
               className="text-center justify-content-md-center"
