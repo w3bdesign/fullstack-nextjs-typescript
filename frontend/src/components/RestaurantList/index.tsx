@@ -32,7 +32,7 @@ const RestaurantList = () => {
       <Container>
         {data.restaurants
           && data.restaurants.map((restaurant) => (
-            <Row key={restaurant!.id} className="justify-content-md-center">
+            <Row key={restaurant!.id} className="text-center justify-content-md-center">
               <Card style={{ width: '18rem', margin: '2rem' }}>
                 <Card.Img
                   variant="top"
@@ -40,7 +40,7 @@ const RestaurantList = () => {
                 />
                 <Card.Body>
                   <Card.Title>{restaurant!.name}</Card.Title>
-                  <Card.Text>{restaurant!.description}</Card.Text>
+                  <Card.Text className="text-left">{restaurant!.description}</Card.Text>
                   <Button variant="primary">Text</Button>
                 </Card.Body>
               </Card>

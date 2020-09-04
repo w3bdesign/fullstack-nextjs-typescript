@@ -16,7 +16,7 @@ const SearchInput = ({
   updateQuery,
 }: TSearchInputProps) => (
   <Container>
-    <Row className="justify-content-md-center" style={{ marginTop: '1rem' }}>
+    <Row className="text-center justify-content-md-center" style={{ marginTop: '2rem' }}>
       <Form>
         <Form.Group controlId="formBasicInput">
           <Form.Label>Search restaurants</Form.Label>
