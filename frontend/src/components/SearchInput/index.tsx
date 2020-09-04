@@ -7,13 +7,15 @@ import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 
 type TSearchInputProps = {
-  query: string;
-  updateQuery: Dispatch<SetStateAction<string>>;
+  // query: string;
+  // updateQuery: Dispatch<SetStateAction<string>>;
+  updateSearchTerm: any;
 }
 
 const SearchInput = ({
-  query,
-  updateQuery,
+  // query,
+  // updateQuery,
+  updateSearchTerm,
 }: TSearchInputProps) => (
   <Container>
     <Row className="text-center justify-content-md-center" style={{ marginTop: '2rem' }}>
@@ -24,8 +26,9 @@ const SearchInput = ({
             type="text"
             placeholder="Enter restaurant name"
             style={{ width: '18rem', marginTop: '1rem' }}
-            onChange={(event) => updateQuery(event.target.value.toLocaleLowerCase())}
-            value={query}
+            onChange={(event) => updateSearchTerm(event.target.value.toLocaleLowerCase())}
+            // onChange={(event) => updateQuery(event.target.value.toLocaleLowerCase())}
+
           />
           <Button variant="primary" style={{ marginTop: '1rem' }}>
             Search
