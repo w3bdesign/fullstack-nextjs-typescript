@@ -17,6 +17,7 @@
     "import/extensions": 0,
     "import/no-unresolved": 0,
     "no-unused-vars": "warn",
-    "camelcase":"off"
+    "camelcase":"off",
+    "max-len":"off"
   }
 }

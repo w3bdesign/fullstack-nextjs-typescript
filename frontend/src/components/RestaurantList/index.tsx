@@ -18,9 +18,7 @@ const RestaurantList = ({ query }: TRestaurantListProps) => {
 
   useEffect(() => {
     if (data) {
-      const searchQuery = data!.restaurants!.filter((test) =>
-        console.log(test.name.toLowerCase().includes(query))
-      );
+      const searchQuery = data!.restaurants!.filter((test) => test!.name.toLowerCase().includes(query));
     }
     // test.toLowerCase().includes(query));
   }, [query]);
@@ -41,11 +39,14 @@ const RestaurantList = ({ query }: TRestaurantListProps) => {
     );
   }
 
+  const searchQuery = data!.restaurants!.filter((filtered) => filtered!.name.toLowerCase().includes(query));
+  const restaurantsToShow = searchQuery || data.restaurants;
+
   return (
     <>
       <Container>
-        {data.restaurants &&
-          data.restaurants.map((restaurant) => (
+        {data.restaurants
+          && restaurantsToShow.map((restaurant) => (
             <Row
               key={restaurant!.id}
               className="text-center justify-content-md-center"
