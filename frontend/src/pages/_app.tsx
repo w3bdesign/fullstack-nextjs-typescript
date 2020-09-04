@@ -13,7 +13,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App = ({ Component }: AppProps) => (
   <div>
-    <Head>Test</Head>
+    <Head><title>Test</title></Head>
     <Header />
     <ApolloProvider client={client}>
       <Component />
