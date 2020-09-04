@@ -13,7 +13,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App = ({ Component }: AppProps) => (
   <div>
-    <Head><title>Test</title></Head>
+    <Head><title>Food ordering fullstack application with NextJS and Strapi</title></Head>
     <Header />
     <ApolloProvider client={client}>
       <Component />

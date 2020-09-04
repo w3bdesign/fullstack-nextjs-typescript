@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useQuery } from '@apollo/client';
 import Row from 'react-bootstrap/Row';
 import Card from 'react-bootstrap/Card';
@@ -7,13 +7,6 @@ import Container from 'react-bootstrap/Container';
 
 import LIST_RESTAURANTS from '../../gql/LIST_RESTAURANTS';
 import { GetMyRestaurants } from '../../generatedTypes/GetMyRestaurants';
-
-export type TRestaurant = {
-  id: string;
-  name: string;
-  description: string | null;
-  image: null;
-};
 
 const RestaurantList = () => {
   const { loading, error, data } = useQuery<GetMyRestaurants>(LIST_RESTAURANTS);
