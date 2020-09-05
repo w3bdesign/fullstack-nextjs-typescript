@@ -45,7 +45,7 @@ const RestaurantList = ({ query }: TRestaurantListProps) => {
               key={restaurant!.id}
               className="text-center justify-content-md-center"
             >
-              <Card style={{ width: '18rem', margin: '2rem' }}>
+              <Card style={{ width: '18rem', margin: '2rem' }} className="shadow">
                 <Card.Img
                   variant="top"
                   src={`${process.env.NEXT_PUBLIC_API_URL}${
