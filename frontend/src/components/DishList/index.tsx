@@ -14,11 +14,10 @@ type TDishListProps = {
 };
 
 const DishList = ({ id }: TDishListProps) => {
-  const { loading, error, data } = useQuery<GetDishes>(LIST_DISHES, { variables: { id } });
-
-  console.log('ID from Dishlist: ');
-  console.log(id);
-  console.log(error);
+  const { loading, error, data } = useQuery<GetDishes>(LIST_DISHES, {
+    variables: { id },
+  });
+  console.log(data);
 
   if (!id) {
     return (
@@ -32,10 +31,7 @@ const DishList = ({ id }: TDishListProps) => {
     return (
       <>
         <div>
-          <p>
-            Error
-
-          </p>
+          <p>Error</p>
         </div>
       </>
     );
@@ -49,14 +45,37 @@ const DishList = ({ id }: TDishListProps) => {
     );
   }
 
-  // const searchQuery = data!.restaurants!.filter((filtered) => filtered!.name.toLowerCase().includes(query));
-  // const restaurantsToShow = searchQuery || data.restaurants;
-
   return (
     <>
       <Container>
-        Dishes! ID:
-        {id}
+        {data.restaurant.dishes.length ? (
+          data.restaurant.dishes.map((restaurant) => (
+            <Row
+              key={restaurant!.id}
+              className="text-center justify-content-md-center"
+            >
+              <Card style={{ width: '18rem', margin: '2rem' }}>
+                <Card.Img
+                  variant="top"
+                  src={`${process.env.NEXT_PUBLIC_API_URL}${
+                    restaurant!.image!.url
+                  } `}
+                />
+                <Card.Body>
+                  <Card.Title>{restaurant!.name}</Card.Title>
+                  <Card.Text className="text-left">
+                    {restaurant!.description}
+                  </Card.Text>
+                  <Card.Text className="text-left">
+                    {restaurant!.price}
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+            </Row>
+          ))
+        ) : (
+          <h3 className="text-center">No restaurants to display</h3>
+        )}
       </Container>
     </>
   );
