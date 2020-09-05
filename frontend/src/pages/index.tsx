@@ -1,5 +1,6 @@
 // https://nextjs.org/docs/basic-features/typescript
 // https://strapi.io/blog/nextjs-react-hooks-strapi-restaurants-2
+// https://strapi.io/blog/nextjs-react-hooks-strapi-dishes-3
 
 import React, { useState } from 'react';
 
