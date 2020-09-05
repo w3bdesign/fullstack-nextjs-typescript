@@ -10,13 +10,36 @@ import LIST_DISHES from '../../gql/LIST_DISHES';
 import { GetDishes } from '../../generatedTypes/GetDishes';
 
 type TDishListProps = {
-  query: string;
+  id: number;
 };
 
-const DishList = (props: any) => {
-  const { loading, error, data } = useQuery<GetDishes>(LIST_DISHES);
+const DishList = ({ id }: TDishListProps) => {
+  const { loading, error, data } = useQuery<GetDishes>(LIST_DISHES, { variables: { id } });
 
-  console.log(props);
+  console.log('ID from Dishlist: ');
+  console.log(id);
+  console.log(error);
+
+  if (!id) {
+    return (
+      <div>
+        <p>ID needs to be set to access this page</p>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <>
+        <div>
+          <p>
+            Error
+
+          </p>
+        </div>
+      </>
+    );
+  }
 
   if (loading || !data) {
     return (
@@ -26,20 +49,15 @@ const DishList = (props: any) => {
     );
   }
 
-  if (error) {
-    return (
-      <div>
-        <p>Error!</p>
-      </div>
-    );
-  }
-
   // const searchQuery = data!.restaurants!.filter((filtered) => filtered!.name.toLowerCase().includes(query));
   // const restaurantsToShow = searchQuery || data.restaurants;
 
   return (
     <>
-      <Container>Dishes!</Container>
+      <Container>
+        Dishes! ID:
+        {id}
+      </Container>
     </>
   );
 };
