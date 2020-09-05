@@ -10,11 +10,32 @@ import LIST_DISHES from '../../gql/LIST_DISHES';
 import { GetDishes } from '../../generatedTypes/GetDishes';
 
 type TDishListProps = {
-  query: string;
+  id: number;
 };
 
-const DishList = ({ query }: TDishListProps) => {
-  const { loading, error, data } = useQuery<GetDishes>(LIST_DISHES);
+const DishList = ({ id }: TDishListProps) => {
+  const { loading, error, data } = useQuery<GetDishes>(LIST_DISHES, {
+    variables: { id },
+  });
+  console.log(data);
+
+  if (!id) {
+    return (
+      <div>
+        <p>ID needs to be set to access this page</p>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <>
+        <div>
+          <p>Error</p>
+        </div>
+      </>
+    );
+  }
 
   if (loading || !data) {
     return (
@@ -24,20 +45,39 @@ const DishList = ({ query }: TDishListProps) => {
     );
   }
 
-  if (error) {
-    return (
-      <div>
-        <p>Error!</p>
-      </div>
-    );
-  }
-
-  // const searchQuery = data!.restaurants!.filter((filtered) => filtered!.name.toLowerCase().includes(query));
-  // const restaurantsToShow = searchQuery || data.restaurants;
-
   return (
     <>
-      <Container />
+      <Container>
+        {data.restaurant.dishes.length ? (
+          data.restaurant.dishes.map((restaurant) => (
+            <Row
+              key={restaurant!.id}
+              className="text-center justify-content-md-center"
+            >
+              <Card style={{ width: '18rem', margin: '2rem' }}>
+                <Card.Img
+                  variant="top"
+                  src={`${process.env.NEXT_PUBLIC_API_URL}${
+                    restaurant!.image!.url
+                  } `}
+                />
+                <Card.Body>
+                  <Card.Title>{restaurant!.name}</Card.Title>
+                  <Card.Text className="text-left">
+                    {restaurant!.description}
+                  </Card.Text>
+                  <Card.Text className="text-left">
+                    {restaurant!.price}
+                  </Card.Text>
+                  <Button variant="primary">Add To Cart</Button>
+                </Card.Body>
+              </Card>
+            </Row>
+          ))
+        ) : (
+          <h3 className="text-center">No restaurants to display</h3>
+        )}
+      </Container>
     </>
   );
 };
