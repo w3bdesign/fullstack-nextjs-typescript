@@ -1,6 +1,6 @@
 import { gql } from '@apollo/client';
 
-const GET_DISHES = gql`
+const LIST_DISHES = gql`
   query GetDishes($id: ID!) {
     restaurant(id: $id) {
       id
@@ -18,4 +18,4 @@ const GET_DISHES = gql`
   }
 `;
 
-export default GET_DISHES;
+export default LIST_DISHES;

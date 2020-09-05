@@ -13,9 +13,9 @@
   },
   "plugins": ["react", "@typescript-eslint"],
   "rules": {
-    "react/jsx-filename-extension": 0,
-    "import/extensions": 0,
-    "import/no-unresolved": 0,
+    "react/jsx-filename-extension": "off",
+    "import/extensions": "off",
+    "import/no-unresolved": "off",
     "no-unused-vars": "warn",
     "camelcase":"off",
     "max-len":"off"
