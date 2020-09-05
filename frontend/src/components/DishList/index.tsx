@@ -13,8 +13,10 @@ type TDishListProps = {
   query: string;
 };
 
-const DishList = ({ query }: TDishListProps) => {
+const DishList = (props: any) => {
   const { loading, error, data } = useQuery<GetDishes>(LIST_DISHES);
+
+  console.log(props);
 
   if (loading || !data) {
     return (
@@ -37,7 +39,7 @@ const DishList = ({ query }: TDishListProps) => {
 
   return (
     <>
-      <Container />
+      <Container>Dishes!</Container>
     </>
   );
 };

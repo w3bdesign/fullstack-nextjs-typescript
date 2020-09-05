@@ -56,7 +56,7 @@ const RestaurantList = ({ query }: TRestaurantListProps) => {
                   <Card.Text className="text-left">
                     {restaurant!.description}
                   </Card.Text>
-                  <Button variant="primary">Text</Button>
+                  <Button variant="primary">List Dishes</Button>
                 </Card.Body>
               </Card>
             </Row>
