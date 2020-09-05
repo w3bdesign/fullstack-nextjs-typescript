@@ -69,6 +69,7 @@ const DishList = ({ id }: TDishListProps) => {
                   <Card.Text className="text-left">
                     {restaurant!.price}
                   </Card.Text>
+                  <Button variant="primary">Add To Cart</Button>
                 </Card.Body>
               </Card>
             </Row>
