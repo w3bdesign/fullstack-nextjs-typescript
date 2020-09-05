@@ -1,5 +1,6 @@
 import React from 'react';
 import { useQuery } from '@apollo/client';
+import Link from 'next/link';
 
 import Row from 'react-bootstrap/Row';
 import Card from 'react-bootstrap/Card';
@@ -38,8 +39,8 @@ const RestaurantList = ({ query }: TRestaurantListProps) => {
   return (
     <>
       <Container>
-        {restaurantsToShow.length
-          ? restaurantsToShow.map((restaurant) => (
+        {restaurantsToShow.length ? (
+          restaurantsToShow.map((restaurant) => (
             <Row
               key={restaurant!.id}
               className="text-center justify-content-md-center"
@@ -56,12 +57,19 @@ const RestaurantList = ({ query }: TRestaurantListProps) => {
                   <Card.Text className="text-left">
                     {restaurant!.description}
                   </Card.Text>
-                  <Button variant="primary">List Dishes</Button>
+                  <Link
+                    as={`/restaurants/${restaurant!.id}`}
+                    href={`/restaurants?id=${restaurant!.id}`}
+                  >
+                    <Button variant="primary">List Dishes</Button>
+                  </Link>
                 </Card.Body>
               </Card>
             </Row>
           ))
-          : (<h3 className="text-center">No restaurants to display</h3>)}
+        ) : (
+          <h3 className="text-center">No restaurants to display</h3>
+        )}
       </Container>
     </>
   );
