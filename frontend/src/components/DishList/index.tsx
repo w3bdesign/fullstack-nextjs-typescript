@@ -48,8 +48,8 @@ const DishList = ({ id }: TDishListProps) => {
   return (
     <>
       <Container>
-        {data.restaurant.dishes.length ? (
-          data.restaurant.dishes.map((restaurant) => (
+        {data!.restaurant!.dishes!.length ? (
+          data!.restaurant!.dishes!.map((restaurant) => (
             <Row
               key={restaurant!.id}
               className="text-center justify-content-md-center"
@@ -66,7 +66,8 @@ const DishList = ({ id }: TDishListProps) => {
                   <Card.Text className="text-left">
                     {restaurant!.description}
                   </Card.Text>
-                  <Card.Text className="text-left">
+                  <Card.Text className="text-center">
+                    $
                     {restaurant!.price}
                   </Card.Text>
                   <Button variant="primary">Add To Cart</Button>
@@ -75,7 +76,7 @@ const DishList = ({ id }: TDishListProps) => {
             </Row>
           ))
         ) : (
-          <h3 className="text-center">No restaurants to display</h3>
+          <h3 className="text-center">No dishes to display</h3>
         )}
       </Container>
     </>
