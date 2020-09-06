@@ -7,12 +7,12 @@ import Nav from 'react-bootstrap/Nav';
 const Header = () => (
   <Navbar bg="primary" variant="dark">
     <Navbar.Brand>Food order fullstack application</Navbar.Brand>
-    <Nav className="justify-content-center" activeKey="/">
+    <Nav className="justify-content-center">
       <Link href="/">
-        <Nav.Link>Restaurants</Nav.Link>
+        <Nav.Link href="/">Restaurants</Nav.Link>
       </Link>
       <Link href="/login">
-        <Nav.Link>Login</Nav.Link>
+        <Nav.Link href="/login">Login</Nav.Link>
       </Link>
     </Nav>
   </Navbar>
