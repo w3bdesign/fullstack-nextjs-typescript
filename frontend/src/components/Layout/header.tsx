@@ -1,14 +1,16 @@
 import React from 'react';
+import Link from 'next/link';
+
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 
 const Header = () => (
   <Navbar bg="primary" variant="dark">
-    <Navbar.Brand href="#home">Navbar</Navbar.Brand>
-    <Nav className="mr-auto">
-      <Nav.Link href="#home">Home</Nav.Link>
-      <Nav.Link href="#features">Features</Nav.Link>
-      <Nav.Link href="#pricing">Pricing</Nav.Link>
+    <Navbar.Brand>Food order fullstack application</Navbar.Brand>
+    <Nav className="justify-content-center" activeKey="/">
+      <Link href="/">
+        <Nav.Link>Restaurants</Nav.Link>
+      </Link>
     </Nav>
   </Navbar>
 );
