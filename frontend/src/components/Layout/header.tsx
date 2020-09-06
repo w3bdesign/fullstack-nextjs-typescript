@@ -11,6 +11,9 @@ const Header = () => (
       <Link href="/">
         <Nav.Link>Restaurants</Nav.Link>
       </Link>
+      <Link href="/login">
+        <Nav.Link>Login</Nav.Link>
+      </Link>
     </Nav>
   </Navbar>
 );
