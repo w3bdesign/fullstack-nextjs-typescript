@@ -38,42 +38,47 @@ const RestaurantList = ({ query }: TRestaurantListProps) => {
   const restaurantsToShow = searchQuery || data.restaurants;
 
   return (
-    <>
-      <Container>
-
-        {restaurantsToShow.length ? (
-          restaurantsToShow.map((restaurant) => (
-            <Row
-              key={restaurant!.id}
-              className="text-center justify-content-md-center"
+    <Container>
+      {restaurantsToShow.length ? (
+        restaurantsToShow.map((restaurant) => (
+          <Row
+            key={restaurant!.id}
+            className="text-center justify-content-md-center"
+          >
+            <Card
+              style={{ maxWidth: '20rem', margin: '2rem' }}
+              className="shadow"
             >
-              <Card style={{ maxWidth: '20rem', margin: '2rem' }} className="shadow">
-                <Card.Img
-                  variant="top"
-                  src={`${process.env.NEXT_PUBLIC_API_URL}${
-                    restaurant!.image!.url
-                  } `}
-                />
-                <Card.Body>
-                  <Card.Title>{restaurant!.name}</Card.Title>
-                  <Card.Text className="text-left">
-                    {restaurant!.description}
-                  </Card.Text>
-                  <Link
-                    as={`/restaurants/${restaurant!.id}`}
-                    href={`/restaurants?id=${restaurant!.id}`}
-                  >
-                    <Button variant="primary">List Dishes</Button>
-                  </Link>
-                </Card.Body>
-              </Card>
-            </Row>
-          ))
-        ) : (
+              <Card.Img
+                variant="top"
+                src={`${process.env.NEXT_PUBLIC_API_URL}${
+                  restaurant!.image!.url
+                } `}
+              />
+              <Card.Body>
+                <Card.Title>{restaurant!.name}</Card.Title>
+                <Card.Text className="text-left">
+                  {restaurant!.description}
+                </Card.Text>
+                <Link
+                  as={`/restaurants/${restaurant!.id}`}
+                  href={`/restaurants?id=${restaurant!.id}`}
+                >
+                  <Button variant="primary">List Dishes</Button>
+                </Link>
+              </Card.Body>
+            </Card>
+          </Row>
+        ))
+      ) : (
+        <Card
+          style={{ maxWidth: '20rem', margin: '2rem' }}
+          className="shadow justify-content-center"
+        >
           <h3 className="text-center">No restaurants to display</h3>
-        )}
-      </Container>
-    </>
+        </Card>
+      )}
+    </Container>
   );
 };
 

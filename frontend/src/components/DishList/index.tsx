@@ -10,14 +10,17 @@ import Spinner from 'react-bootstrap/Spinner';
 import LIST_DISHES from '../../gql/LIST_DISHES';
 import { GetDishes } from '../../generatedTypes/GetDishes';
 
-type TDishListProps = {
-  id: number;
+type TDishProps = {
+  id: string | string[];
 };
 
-const DishList = ({ id }: TDishListProps) => {
-  const { loading, error, data } = useQuery<GetDishes>(LIST_DISHES, {
-    variables: { id },
-  });
+const DishList = ({ id }: TDishProps) => {
+  const { loading, error, data } = useQuery<GetDishes, TDishProps>(
+    LIST_DISHES,
+    {
+      variables: { id },
+    },
+  );
 
   if (!id) {
     return (
@@ -54,7 +57,10 @@ const DishList = ({ id }: TDishListProps) => {
               key={restaurant!.id}
               className="text-center justify-content-md-center"
             >
-              <Card style={{ width: '18rem', margin: '2rem' }} className="shadow">
+              <Card
+                style={{ width: '18rem', margin: '2rem' }}
+                className="shadow"
+              >
                 <Card.Img
                   variant="top"
                   src={`${process.env.NEXT_PUBLIC_API_URL}${

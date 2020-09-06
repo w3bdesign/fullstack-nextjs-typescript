@@ -5,13 +5,11 @@ import DishList from '../components/DishList/index';
 
 const Restaurants = () => {
   const router = useRouter();
-  console.log('Restaurants router: ');
-  console.log(router.query.id);
+  const idParameter = router.query.id || '1';
+
   return (
     <>
-      <h1>List dishes from restaurant</h1>
-      <br />
-      <DishList id={router.query.id} />
+      <DishList id={idParameter} />
     </>
   );
 };
