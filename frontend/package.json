@@ -8,7 +8,8 @@
     "schema:download": "apollo schema:download --endpoint http://localhost:1338/graphql"
   },
   "dependencies": {
-    "@apollo/client": "^3.1.4",    
+    "@apollo/client": "^3.1.4",
+    "axios": "^0.20.0",
     "bootstrap": "^4.5.2",
     "graphql": "^15.3.0",
     "next": "9.5.3",
@@ -22,13 +23,13 @@
     "@types/react-bootstrap": "^0.32.22",
     "@typescript-eslint/eslint-plugin": "^4.0.1",
     "@typescript-eslint/parser": "^4.0.1",
+    "apollo": "^2.30.3",
     "eslint": "^7.8.1",
     "eslint-config-airbnb": "^18.2.0",
     "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-jsx-a11y": "^6.3.1",
     "eslint-plugin-react": "^7.20.6",
     "eslint-plugin-react-hooks": "^4.1.0",
-    "typescript": "^4.0.2",
-    "apollo": "^2.30.3"
+    "typescript": "^4.0.2"
   }
 }
