@@ -5,6 +5,7 @@ import Row from 'react-bootstrap/Row';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
+import Spinner from 'react-bootstrap/Spinner';
 
 import LIST_DISHES from '../../gql/LIST_DISHES';
 import { GetDishes } from '../../generatedTypes/GetDishes';
@@ -17,7 +18,7 @@ const DishList = ({ id }: TDishListProps) => {
   const { loading, error, data } = useQuery<GetDishes>(LIST_DISHES, {
     variables: { id },
   });
-  console.log(data);
+
 
   if (!id) {
     return (
@@ -40,7 +41,7 @@ const DishList = ({ id }: TDishListProps) => {
   if (loading || !data) {
     return (
       <div>
-        <p>Loading...</p>
+        <Spinner animation="border" variant="primary" />
       </div>
     );
   }
