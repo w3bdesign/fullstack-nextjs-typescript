@@ -6,6 +6,7 @@ import Row from 'react-bootstrap/Row';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
+import Spinner from 'react-bootstrap/Spinner';
 
 import LIST_RESTAURANTS from '../../gql/LIST_RESTAURANTS';
 import { GetMyRestaurants } from '../../generatedTypes/GetMyRestaurants';
@@ -20,7 +21,7 @@ const RestaurantList = ({ query }: TRestaurantListProps) => {
   if (loading || !data) {
     return (
       <div>
-        <p>Loading...</p>
+        <Spinner animation="border" variant="primary" />
       </div>
     );
   }
