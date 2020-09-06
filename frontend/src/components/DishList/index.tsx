@@ -19,7 +19,6 @@ const DishList = ({ id }: TDishListProps) => {
     variables: { id },
   });
 
-
   if (!id) {
     return (
       <div>

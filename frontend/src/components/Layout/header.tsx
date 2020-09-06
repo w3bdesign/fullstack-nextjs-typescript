@@ -4,11 +4,9 @@ import Nav from 'react-bootstrap/Nav';
 
 const Header = () => (
   <Navbar bg="primary" variant="dark">
-    <Navbar.Brand href="#home">Navbar</Navbar.Brand>
-    <Nav className="mr-auto">
-      <Nav.Link href="#home">Home</Nav.Link>
-      <Nav.Link href="#features">Features</Nav.Link>
-      <Nav.Link href="#pricing">Pricing</Nav.Link>
+    <Navbar.Brand href="#home">Food order fullstack application</Navbar.Brand>
+    <Nav>
+      <Nav.Link href="/">Restaurants</Nav.Link>
     </Nav>
   </Navbar>
 );

@@ -5,7 +5,7 @@ import Container from 'react-bootstrap/Container';
 const Footer = () => (
   <Navbar bg="secondary" variant="dark">
     <Container className="text-center justify-content-md-center">
-      <Navbar.Brand>Footer comes here</Navbar.Brand>
+      <Navbar.Brand>Copyright (c) 2020</Navbar.Brand>
     </Container>
   </Navbar>
 );

@@ -40,6 +40,7 @@ const RestaurantList = ({ query }: TRestaurantListProps) => {
   return (
     <>
       <Container>
+
         {restaurantsToShow.length ? (
           restaurantsToShow.map((restaurant) => (
             <Row
