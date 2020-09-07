@@ -1,6 +1,7 @@
 // https://nextjs.org/docs/basic-features/typescript
 // https://strapi.io/blog/nextjs-react-hooks-strapi-restaurants-2
 // https://strapi.io/blog/nextjs-react-hooks-strapi-dishes-3
+// https://strapi.io/blog/nextjs-react-hooks-strapi-auth-4
 
 // Bootstrap:
 
