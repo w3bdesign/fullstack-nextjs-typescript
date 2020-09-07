@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@apollo/client": "^3.1.4",
+    "@types/js-cookie": "^2.2.6",
     "axios": "^0.20.0",
     "bootstrap": "^4.5.2",
     "graphql": "^15.3.0",

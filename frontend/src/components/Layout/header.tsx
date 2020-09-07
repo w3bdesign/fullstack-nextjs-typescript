@@ -18,6 +18,10 @@ const Header = () => (
         <Nav.Link href="/register">Register</Nav.Link>
       </Link>
     </Nav>
+    <Nav className="justify-content-center">
+      User:
+    </Nav>
+
   </Navbar>
 );
 
