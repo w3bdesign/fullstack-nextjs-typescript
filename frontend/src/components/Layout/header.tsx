@@ -3,13 +3,12 @@ import Link from 'next/link';
 
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
-import Form from 'react-bootstrap/Form';
-import FormControl from 'react-bootstrap/FormControl';
 
 import AppContext from '../../context/AppContext';
 
 const Header = () => {
-  const [user, setUser] = useContext(AppContext);
+  // const [user, setUser] = useContext(AppContext);
+  const { user, setUser } = useContext(AppContext);
 
   return (
     <Navbar bg="dark" variant="dark" className="justify-content-lg-around">
