@@ -18,16 +18,16 @@ const App = ({ Component }: AppProps) => {
   const [user, setUser] = useState(null);
 
   return (
-
     <>
       <Head>
-        <title>Food ordering fullstack application with NextJS and Strapi</title>
+        <title>
+          Food ordering fullstack application with NextJS and Strapi
+        </title>
       </Head>
       <AppContext.Provider
         value={{
           user,
-          // isAuthenticated: !!this.state.user,
-          isAuthenticated: false,
+          isAuthenticated: !!user,
           setUser,
         }}
       >
