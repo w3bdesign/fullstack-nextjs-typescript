@@ -4,7 +4,7 @@
     "build": "next build",
     "start": "next start",
     "eslint": "eslint --fix src/**/*",
-    "types:generate": "apollo codegen:generate --target typescript --excludes=node_modules/* --includes=**/*.tsx --endpoint http://localhost:1338/graphql --tagName=gql --outputFlat src/generatedTypes --passthroughCustomScalars --customScalarsPrefix Restaurants",
+    "types:generate": "apollo codegen:generate --target typescript --excludes=node_modules/* --includes=**/*.tsx --endpoint http://localhost:1338/graphql --tagName=gql --outputFlat src/generatedTypes --passthroughCustomScalars --customScalarsPrefix Restaurants",    
     "schema:download": "apollo schema:download --endpoint http://localhost:1338/graphql"
   },
   "dependencies": {
