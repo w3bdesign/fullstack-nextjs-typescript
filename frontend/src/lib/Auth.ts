@@ -7,7 +7,12 @@ const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:1338/graphq
 
 console.log(API_URL);
 
-export const Login = () => {};
+export const Login = () => {
+  if (typeof window === 'undefined') {
+    console.log('Server login!');
+  }
+  return 'Logging in ...';
+};
 
 export const Register = () => {};
 
