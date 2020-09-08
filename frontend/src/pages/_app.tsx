@@ -10,7 +10,6 @@ import fetch from 'axios';
 import AppContext from '../context/AppContext';
 import client from '../lib/Apollo';
 import Header from '../components/Layout/header';
-import Footer from '../components/Layout/footer';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -36,7 +35,6 @@ const App = ({ Component }: AppProps) => {
           <Component />
         </ApolloProvider>
       </AppContext.Provider>
-      <Footer />
     </>
   );
 };
