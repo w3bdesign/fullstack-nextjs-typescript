@@ -13,8 +13,12 @@ import Header from '../components/Layout/header';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+interface IUser {
+  user: string | null;
+}
+
 const App = ({ Component }: AppProps) => {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState<IUser>({ user: null });
 
   return (
     <>
