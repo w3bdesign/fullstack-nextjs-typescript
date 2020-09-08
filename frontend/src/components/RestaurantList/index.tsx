@@ -71,12 +71,18 @@ const RestaurantList = ({ query }: TRestaurantListProps) => {
           </Row>
         ))
       ) : (
-        <Card
-          style={{ maxWidth: '20rem', margin: '2rem' }}
-          className="shadow justify-content-center"
-        >
-          <h3 className="text-center">No restaurants to display</h3>
-        </Card>
+        <Row className="text-center justify-content-md-center">
+          <Card
+            style={{ minWidth: '20rem', margin: '2rem' }}
+            className="shadow"
+          >
+            <Card.Body>
+              <Card.Text className="text-center">
+                No restaurants to display
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        </Row>
       )}
     </Container>
   );
