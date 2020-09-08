@@ -18,7 +18,10 @@ const SearchInput = ({ updateQuery }: TSearchInputProps) => (
       style={{ marginTop: '2rem' }}
     >
       <Form>
-        <Card className="shadow" style={{ padding: '1rem' }}>
+        <Card
+          style={{ minWidth: '20rem', margin: '2rem' }}
+          className="shadow"
+        >
           <Form.Group controlId="formBasicInput">
             <Form.Label>Search restaurants</Form.Label>
             <Form.Control
