@@ -20,9 +20,11 @@ const RestaurantList = ({ query }: TRestaurantListProps) => {
 
   if (loading || !data) {
     return (
-      <div>
-        <Spinner animation="border" variant="primary" />
-      </div>
+      <Container>
+        <Row className="text-center justify-content-md-center">
+          <Spinner animation="border" variant="primary" />
+        </Row>
+      </Container>
     );
   }
 
