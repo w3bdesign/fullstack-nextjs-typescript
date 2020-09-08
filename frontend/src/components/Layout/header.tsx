@@ -12,7 +12,6 @@ const Header = () => {
 
   return (
     <Navbar bg="dark" variant="dark" className="justify-content-lg-around">
-      <Navbar.Brand>Food order fullstack application</Navbar.Brand>
       <Nav className="justify-content-center">
         <Link href="/">
           <Nav.Link href="/">Restaurants</Nav.Link>
