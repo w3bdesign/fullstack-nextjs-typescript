@@ -14,7 +14,7 @@ type TSearchInputProps = {
 const SearchInput = ({ updateQuery }: TSearchInputProps) => (
   <Container>
     <Row
-      className="text-center justify-content-md-center"
+      className="text-center justify-content-center"
       style={{ marginTop: '2rem' }}
     >
       <Form>

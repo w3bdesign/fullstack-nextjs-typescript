@@ -22,12 +22,11 @@ const RestaurantList = ({ query }: TRestaurantListProps) => {
     return (
       <Container>
         <Row
-          className="text-center justify-content-md-center"
+          className="text-center justify-content-center"
           style={{ marginTop: '2rem' }}
         >
-          Loading ...
           <br />
-          <Spinner animation="border" variant="primary" />
+          <Spinner animation="border" variant="primary" role="status" />
         </Row>
       </Container>
     );
@@ -50,7 +49,7 @@ const RestaurantList = ({ query }: TRestaurantListProps) => {
         restaurantsToShow.map((restaurant) => (
           <Row
             key={restaurant!.id}
-            className="text-center justify-content-md-center"
+            className="text-center justify-content-center"
           >
             <Card
               style={{ maxWidth: '20rem', margin: '2rem' }}
