@@ -21,7 +21,12 @@ const RestaurantList = ({ query }: TRestaurantListProps) => {
   if (loading || !data) {
     return (
       <Container>
-        <Row className="text-center justify-content-md-center">
+        <Row
+          className="text-center justify-content-md-center"
+          style={{ marginTop: '2rem' }}
+        >
+          Loading ...
+          <br />
           <Spinner animation="border" variant="primary" />
         </Row>
       </Container>
