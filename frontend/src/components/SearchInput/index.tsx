@@ -19,7 +19,7 @@ const SearchInput = ({ updateQuery }: TSearchInputProps) => (
     >
       <Form>
         <Card
-          style={{ minWidth: '20rem', margin: '2rem' }}
+          style={{ minWidth: '20rem', margin: '2rem', padding: '1rem' }}
           className="shadow"
         >
           <Form.Group controlId="formBasicInput">
