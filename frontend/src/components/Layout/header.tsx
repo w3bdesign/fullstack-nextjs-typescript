@@ -7,8 +7,6 @@ import Nav from 'react-bootstrap/Nav';
 import AppContext from '../../context/AppContext';
 
 const Header = () => {
-  // const [user, setUser] = useContext(AppContext);
-  // const [user, setUser] = useState<IUser>({name: 'Jon'});
   const { user, setUser } = useContext(AppContext);
 
   return (

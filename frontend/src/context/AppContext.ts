@@ -5,6 +5,5 @@ const AppContext = createContext({
   isAuthenticated: false,
   setUser: {},
 });
-// const AppContext = createContext({ user: null });
 
 export default AppContext;
