@@ -24,8 +24,7 @@ const Header = () => {
         </Link>
       </Nav>
       <Navbar.Text className="mr-sm-2">
-        User:
-        {user}
+        {user && `Logged in as ${user}`}
       </Navbar.Text>
     </Navbar>
   );
