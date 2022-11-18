@@ -8,30 +8,30 @@
     "schema:download": "apollo schema:download --endpoint http://localhost:1338/graphql"
   },
   "dependencies": {
-    "@apollo/client": "^3.1.4",
-    "@types/js-cookie": "^2.2.6",
-    "axios": "^0.20.0",
-    "bootstrap": "^4.5.2",
-    "graphql": "^15.3.0",
-    "js-cookie": "^2.2.1",
-    "next": "9.5.4",
-    "react": "16.13.1",
-    "react-bootstrap": "^1.3.0",
-    "react-dom": "16.13.1"
+    "@apollo/client": "^3.7.1",
+    "@types/js-cookie": "^3.0.2",
+    "axios": "^1.1.3",
+    "bootstrap": "^5.2.2",
+    "graphql": "^16.6.0",
+    "js-cookie": "^3.0.1",
+    "next": "13.0.3",
+    "react": "18.2.0",
+    "react-bootstrap": "^2.6.0",
+    "react-dom": "18.2.0"
   },
   "devDependencies": {
-    "@types/node": "^14.6.4",
-    "@types/react": "^16.9.49",
-    "@types/react-bootstrap": "^0.32.22",
-    "@typescript-eslint/eslint-plugin": "^4.0.1",
-    "@typescript-eslint/parser": "^4.0.1",
-    "apollo": "^2.30.3",
-    "eslint": "^7.8.1",
-    "eslint-config-airbnb": "^18.2.0",
-    "eslint-plugin-import": "^2.22.0",
-    "eslint-plugin-jsx-a11y": "^6.3.1",
-    "eslint-plugin-react": "^7.20.6",
-    "eslint-plugin-react-hooks": "^4.1.0",
-    "typescript": "^4.0.2"
+    "@types/node": "^18.11.9",
+    "@types/react": "^18.0.25",
+    "@types/react-bootstrap": "^0.32.32",
+    "@typescript-eslint/eslint-plugin": "^5.43.0",
+    "@typescript-eslint/parser": "^5.43.0",
+    "apollo": "^2.34.0",
+    "eslint": "^8.27.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.6.1",
+    "eslint-plugin-react": "^7.31.10",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "typescript": "^4.9.3"
   }
 }
