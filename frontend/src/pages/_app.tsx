@@ -20,7 +20,7 @@ const App = ({ Component }: AppProps) => {
     <>
       <Head>
         <title>
-          Food ordering fullstack application with NextJS and Strapi
+          Food ordering application
         </title>
       </Head>
       <AppContext.Provider
